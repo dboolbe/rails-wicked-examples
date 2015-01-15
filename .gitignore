@@ -15,5 +15,5 @@
 /log/*.log
 /tmp
 
-# Ignore all IDE files.
+# Ignore all RubyMine config files
 /.idea
