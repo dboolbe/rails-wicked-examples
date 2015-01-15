@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  suffix: MyString
+  twitter_username: MyString
+  github_username: MyString
+  website: MyString
+  city: MyString
+  state: MyString
+  zipcode: 1
+  street: MyString
+  car_year: 1
+  car_maker: MyString
+  car_model: MyString
+  car_type: MyString
+
+two:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  suffix: MyString
+  twitter_username: MyString
+  github_username: MyString
+  website: MyString
+  city: MyString
+  state: MyString
+  zipcode: 1
+  street: MyString
+  car_year: 1
+  car_maker: MyString
+  car_model: MyString
+  car_type: MyString
