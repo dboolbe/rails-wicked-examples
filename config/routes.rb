@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :wicked, only: [:create, :show, :update]
 
+  resources :wicked_using_get, only: [:new, :create, :show, :update]
+
   root 'my_models#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

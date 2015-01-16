@@ -1,0 +1,47 @@
+address
+
+<%= form_for @my_model, url: wicked_using_get_path, html: { method: :put, class: 'form' } do |f| %>
+    <% if @my_model.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@my_model.errors.count, "error") %> prohibited this my_model from being saved:</h2>
+
+          <ul>
+            <% @my_model.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= render 'tmp_storage_fields', f: f %>
+
+    <fieldset>
+
+      <div class="field">
+        <%= f.label :city %><br>
+        <%= f.text_field :city %>
+      </div>
+
+      <div class="field">
+        <%= f.label :state %><br>
+        <%= f.text_field :state %>
+      </div>
+
+      <div class="field">
+        <%= f.label :zipcode %><br>
+        <%= f.number_field :zipcode %>
+      </div>
+
+      <div class="field">
+        <%= f.label :street %><br>
+        <%= f.text_field :street %>
+      </div>
+
+    </fieldset>
+
+    <div class="actions">
+      <%= link_to 'Back', previous_wizard_path({:params => params}), :class => 'btn btn-default' %>
+      <%= link_to 'Cancel', my_models_path, data: { confirm: 'Are you sure you want to cancel the wizard?' } %>
+      <%= f.submit %>
+    </div>
+<% end %>
