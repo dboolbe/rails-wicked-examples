@@ -1,0 +1,102 @@
+verify
+
+<%= form_for @my_model, url: wicked_path, html: { method: :put, class: 'form' } do |f| %>
+    <% if @my_model.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@my_model.errors.count, "error") %> prohibited this my_model from being saved:</h2>
+
+          <ul>
+            <% @my_model.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.hidden_field :id %>
+
+    <fieldset>
+
+      <div class="field">
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :middle_name %><br>
+        <%= f.text_field :middle_name, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :suffix %><br>
+        <%= f.text_field :suffix, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :twitter_username %><br>
+        <%= f.text_field :twitter_username, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :github_username %><br>
+        <%= f.text_field :github_username, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :website %><br>
+        <%= f.text_field :website, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :city %><br>
+        <%= f.text_field :city, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :state %><br>
+        <%= f.text_field :state, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :zipcode %><br>
+        <%= f.number_field :zipcode, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :street %><br>
+        <%= f.text_field :street, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :car_year %><br>
+        <%= f.number_field :car_year, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :car_maker %><br>
+        <%= f.text_field :car_maker, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :car_model %><br>
+        <%= f.text_field :car_model, { readonly: 'true' } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :car_type %><br>
+        <%= f.text_field :car_type, { readonly: 'true' } %>
+      </div>
+
+    </fieldset>
+
+    <div class="actions">
+      <%= link_to 'Back', previous_wizard_path({:my_model_id => @my_model.id}), :class => 'btn btn-default' %>
+      <%= link_to 'Cancel', my_models_path, data: { confirm: 'Are you sure you want to cancel the wizard?' } %>
+      <%= f.submit %>
+    </div>
+<% end %>

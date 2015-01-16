@@ -1,0 +1,46 @@
+profile
+
+<%= form_for @my_model, url: wicked_path, html: { method: :put, class: 'form' } do |f| %>
+    <% if @my_model.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@my_model.errors.count, "error") %> prohibited this my_model from being saved:</h2>
+
+          <ul>
+            <% @my_model.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.hidden_field :id %>
+
+    <fieldset>
+
+      <div class="field">
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :middle_name %><br>
+        <%= f.text_field :middle_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :suffix %><br>
+        <%= f.text_field :suffix %>
+      </div>
+
+    </fieldset>
+
+    <div class="actions">
+      <%= link_to 'Cancel', my_models_path, data: { confirm: 'Are you sure you want to cancel the wizard?' } %>
+      <%= f.submit %>
+    </div>
+<% end %>

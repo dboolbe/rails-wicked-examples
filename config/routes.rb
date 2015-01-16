@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :my_models
 
+  resources :wicked, only: [:create, :show, :update]
+
   root 'my_models#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
