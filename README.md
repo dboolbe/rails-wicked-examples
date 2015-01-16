@@ -7,4 +7,12 @@ This repository is to show other ways of using the Wicked gem to create wizard f
 In the application, I create a wizard using the basic tutorials on the subject. The model is created and stored on the database, the model's id is passed along via the GET protocol. After each wizard step, the attributes entered are updated to model and stored.
 
 ## Second Approach
-There is a second approach that creates a wizard but data is handle differently. The form steps are all presented to you before the model is stored on the database. This approach avoids have semi-complete models residing within your database. This happens because the attributes of the models are passed along with the parameter component of the GET protocol. **NOTE** There are cons to this approach because GET potocol params are stored within the header request. The header has varying size limits so you can easily break the application by having too many attributes and/or having large attribute values. 
+There is a second approach that creates a wizard but data is handle differently. The form steps are all presented to you before the model is stored on the database. This approach avoids have semi-complete models residing within your database. This happens because the attributes of the models are passed along with the parameter component of the GET protocol.
+
+**NOTE** There are cons to this approach because GET potocol params are stored within the header request. The header has varying size limits so you can easily break the application by having too many attributes and/or having large attribute values. Also as with all GET params, they are visible in the URL field of any browser. So you would not want to pass confidential attributes this way.
+
+## Third Approach
+**Pending "Still Researching"**: Wanted to see if I could use POST protocol to pass params.
+
+## Fourth Approach
+**Pending "Still Researching"**: Wanted to see if I could use SESSION to pass params.
